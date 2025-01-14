@@ -19,9 +19,12 @@ $gray: #c2c2c2;
   @if $mode == 'light' {
     background: linear-gradient($gray, $white);
 
-    h1, h2, h3, p {
+    h1,
+    h2,
+    h3,
+    p {
       color: $black;
-      
+
       a {
         color: $lightblue;
 
@@ -30,7 +33,7 @@ $gray: #c2c2c2;
         }
       }
     }
-    
+
     ion-icon {
       color: $black;
     }
@@ -39,9 +42,12 @@ $gray: #c2c2c2;
   @if $mode == 'dark' {
     background-image: linear-gradient($darkblue, $black);
 
-    h1, h2, h3, p {
+    h1,
+    h2,
+    h3,
+    p {
       color: $white;
-      
+
       a {
         color: $lightblue;
 
@@ -50,7 +56,7 @@ $gray: #c2c2c2;
         }
       }
     }
-    
+
     ion-icon {
       color: $white;
     }

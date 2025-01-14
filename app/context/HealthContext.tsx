@@ -62,7 +62,7 @@ const HealthContextProvider: React.FC<Props> = React.memo(({ children }) => {
     servers.map( async (service: string) => {
     try {
 
-      ipcRenderer.removeAllListeners('healthResponse');
+      // ipcRenderer.removeAllListeners('healthResponse');
       ipcRenderer.send('healthRequest', `${service}`);
       ipcRenderer.on('healthResponse', (event: Electron.Event, data: string) => {
         
