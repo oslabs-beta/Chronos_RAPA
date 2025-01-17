@@ -38,7 +38,3 @@
 6. You should be good to go!!!! However, because the website caches, you may need to visit from another browser or incognito mode to see changes. It might not take 24 hours, but give it a few minutes before checking. Make sure to use a different browser as previously stated.  
 
 _Note: The website will take around 24 hours to update with your changes._
-#test
-<!-- test 2 -->
-<!-- test 3 -->
-<!-- final test -->
