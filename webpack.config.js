@@ -4,9 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  stats: {
-    warningsFilter: (warning) => warning.includes('Deprecation'), // ignores SCSS deprecation warnings
-  },
+  ignoreWarnings: [
+    /Deprecation/  // This will filter warnings containing 'Deprecation'
+  ],
   entry: './app/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -16,35 +16,30 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
-        loader: 'ts-loader',
+        // This single rule replaces both ts-loader and babel-loader
+        test: /\.[jt]sx?$/,
+        loader: 'esbuild-loader',
+        options: {
+          loader: 'tsx',  // Handles both TSX and JSX
+          target: 'es2015',
+          tsconfigRaw: require('./tsconfig.json')
+        },
         exclude: /node_modules/,
       },
-      {
-        test: /\.js$|jsx/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env', '@babel/preset-react'],
-              cacheDirectory: true,
-            },
-          },
-        ],
-        exclude: /node_modules/,
-      },
+      // Your existing SCSS rule
       {
         test: /\.s?css$/,
         use: ['style-loader', 'css-loader', "sass-loader",
-{
-  loader: 'sass-loader',
-  options: {
-    implementation: require('sass') // Use Dart Sass
-  },
-}
- ],
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('sass')
+            },
+          }
+        ],
         exclude: /node_modules/,
       },
+      // Your existing assets rule
       {
         test: /\.(jpg|jpeg|png|ttf|svg|gif)$/,
         type: 'asset/resource',
@@ -66,8 +61,9 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'node_modules/react-devtools'), // Path to the React DevTools directory in node_modules
-          to: 'react-devtools', // Output directory in your webpack build
+          from: path.resolve(__dirname, 'node_modules/react-devtools'),
+          to: 'react-devtools',
+          noErrorOnMissing: true
         },
       ],
     })
@@ -76,3 +72,4 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.gif', '.png', '.svg'],
   },
 };
+
