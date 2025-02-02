@@ -97,7 +97,11 @@ By default DevTools listen to port `8097` on `localhost`. If you need to customi
 
 ![Allow access to file URLs](https://user-images.githubusercontent.com/29597/64646784-95b58080-d3cc-11e9-943d-02474683398a.png)
 
+<<<<<<< HEAD
 Or you could develop with a local HTTP server like [`serve`](https://www.npmjs.com/package/serve).
+=======
+Or you could develop with a local HTTP server [like `serve`](https://www.npmjs.com/package/serve).
+>>>>>>> chronosWebsite
 
 **The React tab won't show up if the site doesn't use React**, or if React can't communicate with the devtools. When the page loads, the devtools sets a global named `__REACT_DEVTOOLS_GLOBAL_HOOK__`, then React communicates with that hook during initialization. You can test this on the [React website](https://reactjs.org/) or by inspecting [Facebook](https://www.facebook.com/).
 
@@ -105,6 +109,7 @@ Or you could develop with a local HTTP server like [`serve`](https://www.npmjs.c
 
 **If your app is inside an iframe, a Chrome extension, React Native, or in another unusual environment**, try [the standalone version instead](https://github.com/facebook/react/tree/main/packages/react-devtools). Chrome apps are currently not inspectable.
 
+<<<<<<< HEAD
 **If your Components tab is empty, refer to "The React tab shows no components" section below**.
 
 **If you still have issues** please [report them](https://github.com/facebook/react/issues/new?labels=Component:%20Developer%20Tools). Don't forget to specify your OS, browser version, extension version, and the exact instructions to reproduce the issue with a screenshot.
@@ -117,6 +122,10 @@ As we migrate to a Chrome Extension Manifest V3, we start to use a new method to
 #### Service Worker malfunction
 Go to chrome://extensions. If you see "service worker (inactive)" in the React Developer Tools extension, try disabling and re-enabling the extension. This will restart the service worker. Then go to the page you want to inspect, close the DevTools, and reload the page. Open the DevTools again and the React components tab should be working.
 
+=======
+**If you still have issues** please [report them](https://github.com/facebook/react/issues/new?labels=Component:%20Developer%20Tools). Don't forget to specify your OS, browser version, extension version, and the exact instructions to reproduce the issue with a screenshot.
+
+>>>>>>> chronosWebsite
 ## Local development
 The standalone DevTools app can be built and tested from source following the instructions below.
 
@@ -139,7 +148,12 @@ To use the latest build from CI, run the following command from the root of the 
 You can test the standalone DevTools by running the following:
 
 * **First, complete the prerequisite steps above! If you don't do it, none of the steps below will work.**
+<<<<<<< HEAD
 * Then, run `yarn start:backend` and `yarn start:standalone` in `packages/react-devtools-core`
 * Run `yarn start` in `packages/react-devtools`
+=======
+* Then, run `yarn start:backend` and `yarn start:standalone` in `../react-devtools-core`
+* Run `yarn start` in this folder
+>>>>>>> chronosWebsite
 * Refresh the app after it has recompiled a change
 * For React Native, copy `react-devtools-core` to its `node_modules` to test your changes.
