@@ -4,6 +4,12 @@ const app = express();
 const port = 3000;
 
 // console.log('CURRENT PATH', path.resolve(__dirname, '../client/assets'));
+app.use((req, res, next) => {  
+    if (req.url.endsWith('.ico')) {  
+        res.setHeader('Content-Type', 'image/svg+xml');  
+    }  
+    next();  
+});
 
 //serve static files 
 app.use('/assets', express.static(path.resolve(__dirname, '../client/assets')))

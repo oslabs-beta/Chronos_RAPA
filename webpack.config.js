@@ -38,11 +38,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './dist/index.html',
     }),
-    new CopyPlugin({  
-      patterns: [  
-          { from: './client/assets/favicon.ico', to: 'favicon.ico' }  
-      ],  
-  }),  
+    // This was used to try to get a website favicon
+  //   new CopyPlugin({  
+  //     patterns: [  
+  //         { from: './favicon.ico', to: 'favicon.ico' }  
+  //     ],  
+  // }),  
   ],
   resolve: {
     extensions: ['.jsx', '.js'],
