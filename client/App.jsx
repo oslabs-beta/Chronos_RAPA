@@ -6,7 +6,7 @@ import Main from './components/pages/Main';
 import Team from './components/pages/Team';
 import Contact from './components/pages/Contact';
 import Footer from './components/Footer';
-import Favicon from "./components/Favicon";
+import Favicon from "./assets/favicon.ico";
 
 import './stylesheets/index.scss';
 import './stylesheets/App.scss'

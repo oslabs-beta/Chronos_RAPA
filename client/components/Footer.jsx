@@ -1,7 +1,7 @@
 import React from 'react';
 
 import '../stylesheets/Footer.scss';
-import Logo from '../assets/chronos-v4-pangolin.png';
+import Logo from '../assets/logo.svg';
 
 const Footer = () => (
   <footer>

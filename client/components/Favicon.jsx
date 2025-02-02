@@ -1,12 +1,12 @@
-// src/Favicon.jsx  
+import favicon from "../assets/favicon.ico";
 import React, { useEffect } from 'react';  
 
 const Favicon = ({ href }) => {  
     useEffect(() => {  
         const link = document.createElement('link');  
         link.rel = 'icon';  
-        link.type = 'image/png';  
-        link.href = '../assets/favicon.ico';  
+        link.type = 'image/x-icon';  
+        link.href = favicon;  
 
         document.head.appendChild(link);  
 

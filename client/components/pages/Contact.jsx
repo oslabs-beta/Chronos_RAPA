@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../assets/chronos-v4.png';
+import Logo from '../../assets/logo.svg';
 import '../../stylesheets/Contact.scss';
 
 const Contact = () => (
