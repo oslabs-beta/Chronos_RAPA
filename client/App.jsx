@@ -6,7 +6,6 @@ import Main from './components/pages/Main';
 import Team from './components/pages/Team';
 import Contact from './components/pages/Contact';
 import Footer from './components/Footer';
-import Favicon from "./assets/favicon.ico";
 
 import './stylesheets/index.scss';
 import './stylesheets/App.scss'
@@ -14,7 +13,6 @@ import './stylesheets/App.scss'
 const App = () => {
   return (
     <div className="container">
-      <Favicon href="./assets/favicon.ico" /> 
       <Nav />
       <div className="routes">
         <Routes>
